@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex | Creative Web Developer & Digital Alchemist</title>
+    <meta name="description" content="Portfolio of Alex, a Creative Web Developer specializing in immersive 3D experiences, parallax storytelling, and high-performance web engineering.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient background noise overlay -->
+    <div class="noise"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+    <!-- WebGL Canvas for 3D graphics -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Preloader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <span class="loader-logo">ALEX.DEV</span>
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="loader-bar"></div>
+            </div>
+            <span class="loader-status" id="loader-status">Initializing WebGL Scene...</span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="#hero">ALEX<span>.DEV</span></a>
+        </div>
+        <nav class="nav">
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#story" class="nav-link">Story</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Work</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-action">
+            <a href="#contact" class="cta-button mini">Hire Me</a>
+        </div>
+    </header>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        
+        <!-- HERO SECTION -->
+        <section id="hero" class="section hero-section">
+            <div class="hero-content">
+                <div class="hero-tagline reveal-text">CREATIVE WEB DEVELOPER</div>
+                <h1 class="hero-title reveal-text">
+                    Weaving Code Into <span class="gradient-text">Interactive Art</span>
+                </h1>
+                <p class="hero-desc reveal-text">
+                    I design and engineer immersive 3D digital experiences where performance meets aesthetics. Let's build the future of the web.
+                </p>
+                <div class="hero-actions reveal-text">
+                    <a href="#projects" class="cta-button primary hover-target">
+                        <span>Explore Work</span>
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="#story" class="cta-button secondary hover-target">Read Story</a>
+                </div>
+            </div>
+            <div class="scroll-prompt hover-target" id="scroll-prompt">
+                <span>SCROLL DOWN</span>
+                <div class="scroll-arrow">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORY / ABOUT SECTION -->
+        <section id="story" class="section story-section">
+            <div class="container">
+                <div class="grid-layout">
+                    <div class="story-visual">
+                        <!-- Three.js mesh morphing gets intense or locks view here -->
+                        <div class="visual-placeholder-trigger"></div>
+                    </div>
+                    <div class="story-text-container">
+                        <span class="section-subtitle">THE VISION</span>
+                        <h2 class="section-title">The Digital Alchemist</h2>
+                        <div class="story-paragraphs">
+                            <p class="story-p scroll-reveal-p">
+                                I believe the web shouldn't just be viewed — it should be <strong>experienced</strong>. In a world of static layouts, I seek to breathe life into interfaces through depth, physics, and movement.
+                            </p>
+                            <p class="story-p scroll-reveal-p">
+                                My approach combines logical software engineering with fine art principles. By leveraging WebGL and smooth mathematical animations, I transform complex data and narratives into elegant digital interactions.
+                            </p>
+                            <p class="story-p scroll-reveal-p">
+                                Every line of code is written with performance and accessibility in mind, ensuring that high-end visuals load instantly and run buttery-smooth on any screen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS / PARALLAX FEATURE SECTION -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="center-header">
+                    <span class="section-subtitle">CAPABILITIES</span>
+                    <h2 class="section-title">The Toolkit</h2>
+                    <p class="section-desc">Blending cutting-edge technologies to craft responsive, immersive, and lightning-fast web applications.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card parallax-card" data-speed="0.05">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <h3>3D Web & WebGL</h3>
+                        <p>Creating lightweight, interactive 3D worlds directly inside the browser using Three.js, shaders, and GLSL to deliver immersive experiences.</p>
+                        <div class="skill-badge-container">
+                            <span class="skill-badge">Three.js</span>
+                            <span class="skill-badge">WebGL</span>
+                            <span class="skill-badge">Shaders</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card parallax-card" data-speed="-0.03">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </div>
+                        <h3>Frontend Architecture</h3>
+                        <p>Structuring scalable single-page systems with semantic HTML, vanilla CSS design tokens, and modular, clean-code JavaScript layouts.</p>
+                        <div class="skill-badge-container">
+                            <span class="skill-badge">HTML5/CSS3</span>
+                            <span class="skill-badge">ES6+ JavaScript</span>
+                            <span class="skill-badge">Vite</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card parallax-card" data-speed="0.08">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        </div>
+                        <h3>Motion & Physics</h3>
+                        <p>Choreographing complex page transitions, physics-based scroll behaviors, and responsive element morphing using GSAP & ScrollTrigger.</p>
+                        <div class="skill-badge-container">
+                            <span class="skill-badge">GSAP</span>
+                            <span class="skill-badge">ScrollTrigger</span>
+                            <span class="skill-badge">Web Animations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS / GALLERY SECTION -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="projects-header">
+                    <div>
+                        <span class="section-subtitle">CREATIONS</span>
+                        <h2 class="section-title">Selected Works</h2>
+                    </div>
+                    <p class="section-desc right-aligned">A showcase of projects blending visual flair with technical precision.</p>
+                </div>
+
+                <div class="projects-list">
+                    <!-- Project 1 -->
+                    <div class="project-item scroll-reveal-project">
+                        <div class="project-num">01</div>
+                        <div class="project-info">
+                            <h3>HyperSpace Interface</h3>
+                            <p>An interactive WebGL dashboard visualizing real-time gravitational data with a custom physics particle engine.</p>
+                            <div class="project-tech">
+                                <span>Three.js</span>
+                                <span>ShaderMaterial</span>
+                                <span>GSAP</span>
+                            </div>
+                        </div>
+                        <div class="project-image-container hover-target">
+                            <img src="assets/project1.png" alt="HyperSpace Interface Mockup" class="project-img">
+                            <div class="project-overlay-gradient"></div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-item scroll-reveal-project">
+                        <div class="project-num">02</div>
+                        <div class="project-info">
+                            <h3>Quantum Fluid Dynamics</h3>
+                            <p>A canvas-based interactive simulation of fluid mechanics mapped to ambient audio frequencies.</p>
+                            <div class="project-tech">
+                                <span>HTML5 Canvas</span>
+                                <span>Web Audio API</span>
+                                <span>CSS Math</span>
+                            </div>
+                        </div>
+                        <div class="project-image-container hover-target">
+                            <img src="assets/project2.png" alt="Quantum Fluid Dynamics Mockup" class="project-img">
+                            <div class="project-overlay-gradient"></div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-item scroll-reveal-project">
+                        <div class="project-num">03</div>
+                        <div class="project-info">
+                            <h3>NeuraLink Web Concept</h3>
+                            <p>A multi-dimensional storytelling experience detailing synaptic interfaces using parallax grids.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>ScrollTrigger</span>
+                                <span>SVG Morph</span>
+                            </div>
+                        </div>
+                        <div class="project-image-container hover-target">
+                            <img src="assets/project3.png" alt="NeuraLink Web Concept Mockup" class="project-img">
+                            <div class="project-overlay-gradient"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info-panel">
+                        <span class="section-subtitle">GET IN TOUCH</span>
+                        <h2 class="section-title">Let's craft something <span class="gradient-text">extraordinary</span> together.</h2>
+                        <p class="contact-pitch">Currently accepting select freelance inquiries, creative collaborations, and permanent engineering positions.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <span class="detail-label">Email</span>
+                                <a href="mailto:alex@creativeweb.dev" class="detail-value hover-target">alex@creativeweb.dev</a>
+                            </div>
+                            <div class="contact-detail-item">
+                                <span class="detail-label">Socials</span>
+                                <div class="social-links">
+                                    <a href="#" class="social-link hover-target">GitHub</a>
+                                    <a href="#" class="social-link hover-target">LinkedIn</a>
+                                    <a href="#" class="social-link hover-target">Twitter</a>
+                                    <a href="#" class="social-link hover-target">Codepen</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel">
+                        <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Message sent! Thank you.');">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" required placeholder="e.g. John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" required placeholder="e.g. john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" rows="5" required placeholder="Describe your project, ideas, or questions..."></textarea>
+                            </div>
+                            <button type="submit" class="cta-button primary submit-btn hover-target">
+                                <span>Send Message</span>
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <p>&copy; 2026 ALEX.DEV. Crafted with passion, code, and math.</p>
+                <div class="footer-back-to-top">
+                    <a href="#hero" class="hover-target">Back to top ↑</a>
+                </div>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- CDNs: Three.js, GSAP, ScrollTrigger, ScrollToPlugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
+    <!-- Script -->
+    <script src="main.js"></script>
+</body>
+</html>
